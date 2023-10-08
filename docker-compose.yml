@@ -1,0 +1,35 @@
+version: '3'
+services:
+  # API Spring Boot
+  api:
+    container_name: api-spring
+    image: carteira-image:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db  # Garante que o contêiner do banco de dados esteja pronto antes de iniciar a API
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/carteira
+      - SPRING_DATASOURCE_USERNAME=carteira
+      - SPRING_DATASOURCE_PASSWORD=carteira
+
+  # Banco de Dados PostgreSQL
+  db:
+    container_name: db
+    image: postgres:13  # PostgreSQL 13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: carteira-database
+      POSTGRES_USER: carteira
+      POSTGRES_PASSWORD: carteira
+
+  # PGAdmin (interface web para PostgreSQL)
+  pgadmin:
+    container_name: pgAdmin
+    image: dpage/pgadmin4  #  PGAdmin 4
+    ports:
+      - "8081:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: gualter@email.com
+      PGADMIN_DEFAULT_PASSWORD: gualter 

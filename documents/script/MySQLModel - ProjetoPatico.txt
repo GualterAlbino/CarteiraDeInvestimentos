@@ -1,0 +1,48 @@
+
+-- PostgreSQL Script
+
+-- Cria o schema
+CREATE SCHEMA IF NOT EXISTS carteira
+
+-- Cria a tabela Usuario
+CREATE TABLE IF NOT EXISTS carteira.Usuario (
+  id VARCHAR(45) PRIMARY KEY,
+  nome VARCHAR(45) NOT NULL,
+  senha VARCHAR(45) NOT NULL
+);
+
+-- Cria a tabela Transacao
+CREATE TABLE IF NOT EXISTS carteira.Transacao (
+  id VARCHAR(45) PRIMARY KEY,
+  ticket VARCHAR(45) NOT NULL,
+  usuario VARCHAR(45) NULL,
+  tipo VARCHAR(45) NOT NULL,
+  operacao VARCHAR(45) NOT NULL,
+  descricao VARCHAR(45) NOT NULL,
+  quantidade INT NOT NULL,
+  valor_unitario DOUBLE PRECISION NOT NULL,
+  valor_total DOUBLE PRECISION NOT NULL,
+  data_hora TIMESTAMP NOT NULL,
+  
+  CONSTRAINT fk_Transacao_Usuario
+    FOREIGN KEY (usuario)
+    REFERENCES carteira.Usuario (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+
+-- Cria a tabela Carteira
+CREATE TABLE IF NOT EXISTS carteira.Carteira (
+  usuario VARCHAR(45) NOT NULL,
+  ticket VARCHAR(45) NOT NULL,
+  quantidade INT NOT NULL,
+  valorUnitario DOUBLE PRECISION NOT NULL,
+  valorTotal DOUBLE PRECISION NOT NULL,
+  custoMedio DOUBLE PRECISION NOT NULL,
+  PRIMARY KEY (usuario),
+  CONSTRAINT fk_Carteira_Usuario
+    FOREIGN KEY (usuario)
+    REFERENCES carteira.Usuario (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);

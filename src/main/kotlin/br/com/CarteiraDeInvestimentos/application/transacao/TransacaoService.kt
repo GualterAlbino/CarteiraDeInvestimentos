@@ -18,4 +18,13 @@ class TransacaoService(
     fun findById(transacaoId: UUID): Transacao {
         return transacaoRepository.findById(transacaoId) ?: throw TransacaoNaoEncontradaException(transacaoId)
     }
+
+    fun inserir(transacao: TransacaoCreateComand): Transacao {
+
+        val transacaoDomain = transacao.toTransacao()
+
+        transacaoRepository.inserir(transacao = transacaoDomain)
+
+        return findById(transacaoDomain.id)
+    }
 }

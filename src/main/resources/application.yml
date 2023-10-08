@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: carteira-de-investimentos-api
+  main:
+    web-application-type: servlet
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    name: carteira-database
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/carteira-database?currentSchema=carteira
+    username: carteira
+    password: carteira
+
+server:
+  port: 8080

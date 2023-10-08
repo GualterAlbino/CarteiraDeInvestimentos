@@ -1,8 +1,10 @@
 package br.com.CarteiraDeInvestimentos.application.transacao
 
+import br.com.CarteiraDeInvestimentos.application.transacao.exceptions.TransacaoNaoEncontradaException
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
 import br.com.CarteiraDeInvestimentos.domain.transacao.TransacaoRepository
 import org.springframework.stereotype.Service
+import java.util.UUID
 
 @Service
 class TransacaoService(
@@ -11,5 +13,9 @@ class TransacaoService(
 
     fun findAll(): List<Transacao>{
         return transacaoRepository.findAll()
+    }
+
+    fun findById(transacaoId: UUID): Transacao {
+        return transacaoRepository.findById(transacaoId) ?: throw TransacaoNaoEncontradaException(transacaoId)
     }
 }

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS carteira.Transacao (
   quantidade INT NOT NULL,
   valor_unitario DOUBLE PRECISION NOT NULL,
   valor_total DOUBLE PRECISION NOT NULL,
-  data_hora TIMESTAMP NOT NULL,
+  data_hora VARCHAR(45) NOT NULL,
   
   CONSTRAINT fk_Transacao_Usuario
     FOREIGN KEY (usuario)

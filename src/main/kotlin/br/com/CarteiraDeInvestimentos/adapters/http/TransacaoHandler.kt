@@ -28,4 +28,9 @@ class TransacaoHandler(
        val transacao = transacaoService.inserir(transacaoCreateComand)
         return ResponseEntity.status(HttpStatus.CREATED).body(transacao)
     }
+
+    fun excluir(transacaoId : String):ResponseEntity<String>{
+        transacaoService.excluir(transacaoId = UUID.fromString(transacaoId))
+        return ResponseEntity.noContent().build()
+    }
 }

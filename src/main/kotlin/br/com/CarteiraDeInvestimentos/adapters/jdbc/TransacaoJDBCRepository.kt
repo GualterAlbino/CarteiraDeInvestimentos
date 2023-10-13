@@ -1,5 +1,6 @@
 package br.com.CarteiraDeInvestimentos.adapters.jdbc
 
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlDeleteById
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlInsertTransacao
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectAll
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectById
@@ -65,6 +66,19 @@ class TransacaoJDBCRepository(private val db: NamedParameterJdbcOperations ) : T
         }
     }
 
+    override fun excluir(transacaoId: UUID): Boolean {
+        try {
+            val params = MapSqlParameterSource("id", transacaoId)
+            val linhasExcluidas = db.update(sqlDeleteById(), params)
+
+            return linhasExcluidas == 1
+
+        }catch (ex: Exception){
+            LOGGER.error { "Houve um erro ao excluir a transação: ${ex.message}" }
+            throw ex
+        }
+    }
+
 
     private fun rowMapper()= org.springframework.jdbc.core.RowMapper<Transacao> { rs, _ ->
         val transacaoId = UUID.fromString(rs.getString("id"))
@@ -81,6 +95,8 @@ class TransacaoJDBCRepository(private val db: NamedParameterJdbcOperations ) : T
                 dataHora = rs.getString("data_hora")
         )
     }
+
+
 
 
 

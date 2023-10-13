@@ -27,4 +27,10 @@ class TransacaoService(
 
         return findById(transacaoDomain.id)
     }
+
+    fun excluir(transacaoId: UUID) {
+        transacaoRepository.findById(transacaoId = transacaoId) ?: throw  TransacaoNaoEncontradaException(transacaoId)
+
+        transacaoRepository.excluir(transacaoId)
+    }
 }

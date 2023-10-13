@@ -33,5 +33,10 @@ object TransacaoSqlExpressions {
         )
     """.trimIndent()
 
+
+    fun sqlDeleteById() = """
+        DELETE FROM transacao WHERE id = :id
+    """.trimIndent()
+
 }
 

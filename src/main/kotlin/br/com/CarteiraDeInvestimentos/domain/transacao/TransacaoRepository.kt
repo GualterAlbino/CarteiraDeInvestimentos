@@ -9,4 +9,6 @@ interface TransacaoRepository {
     fun findById(transacaoId: UUID):Transacao? //Ao utilizar ? deixa condicional
 
     fun inserir(transacao: Transacao): Boolean
+
+    fun excluir(transacaoId: UUID):Boolean
 }

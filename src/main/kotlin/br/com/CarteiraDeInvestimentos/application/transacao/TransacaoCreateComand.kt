@@ -2,11 +2,12 @@ package br.com.CarteiraDeInvestimentos.application.transacao
 
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
 import kotlinx.serialization.Serializable
+import java.util.*
 
 @Serializable
 data class TransacaoCreateComand(
         val ticket :String,
-        val usuario: String,
+        val usuario: UUID,
         val tipo: String,
         val operacao: String,
         val descricao: String,

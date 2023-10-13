@@ -71,7 +71,7 @@ class TransacaoJDBCRepository(private val db: NamedParameterJdbcOperations ) : T
         Transacao(
                 id = transacaoId,
                 ticket = rs.getString("ticket"),
-                usuario = rs.getString("usuario"),
+                usuario = UUID.fromString(rs.getString("usuario")),
                 tipo = rs.getString("tipo"),
                 operacao = rs.getString("operacao"),
                 descricao = rs.getString("descricao"),

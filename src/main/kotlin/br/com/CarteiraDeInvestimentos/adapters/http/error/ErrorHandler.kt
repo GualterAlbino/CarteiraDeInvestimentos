@@ -2,6 +2,7 @@ package br.com.catalogoprodutos.adapter.error
 
 import br.com.CarteiraDeInvestimentos.adapters.http.error.ErrorResponse
 import br.com.CarteiraDeInvestimentos.application.transacao.exceptions.TransacaoNaoEncontradaException
+import br.com.CarteiraDeInvestimentos.application.usuario.exceptions.UsuarioNaoEncontradoException
 import mu.KotlinLogging
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -24,6 +25,11 @@ private fun Throwable.toResponse(): Pair<HttpStatus, ErrorResponse> =
             is TransacaoNaoEncontradaException -> toResponse(
                     id = this.transacaoId,
                     statusCode = HttpStatus.NOT_FOUND,
+            )
+
+            is UsuarioNaoEncontradoException -> toResponse(
+                    id = this.usuarioId,
+                    statusCode = HttpStatus.NOT_FOUND
             )
 
             else -> {

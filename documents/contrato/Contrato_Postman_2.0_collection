@@ -47,22 +47,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{localhost}}/transacao/:id",
-							"host": [
-								"{{localhost}}"
-							],
-							"path": [
-								"transacao",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"url": "{{localhost}}/transacao/232447b9-a951-4d74-b33d-f12983af565a"
 					},
 					"response": []
 				},
@@ -73,7 +58,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"id_tipoAtivo\": 1,\r\n   \"id_tipoTransacao\": 2,\r\n   \"ticket\": \"XFR11\",\r\n   \"descricao\": \"\",\r\n    \"quantidade\": 10,\r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100.00,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
+							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo PAULO\",\r\n    \"quantidade\": 10,\r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100.00,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -134,35 +119,6 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Carteira",
-			"item": [
-				{
-					"name": "Obter Carteira",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{localhost}}/carteira/:idUsuario",
-							"host": [
-								"{{localhost}}"
-							],
-							"path": [
-								"carteira",
-								":idUsuario"
-							],
-							"variable": [
-								{
-									"key": "idUsuario",
 									"value": ""
 								}
 							]
@@ -243,6 +199,59 @@
 						"url": "{{localhost}}/usuario"
 					},
 					"response": []
+				},
+				{
+					"name": "Buscar Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/usuario/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7d9cd1ad-3f8e-4256-86d0-2bca91196433"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carteira",
+			"item": [
+				{
+					"name": "Obter Carteira",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/carteira/:idUsuario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"carteira",
+								":idUsuario"
+							],
+							"variable": [
+								{
+									"key": "idUsuario",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -270,7 +279,7 @@
 	"variable": [
 		{
 			"key": "localhost",
-			"value": "https://3000",
+			"value": "http://localhost:8080",
 			"type": "string"
 		}
 	]

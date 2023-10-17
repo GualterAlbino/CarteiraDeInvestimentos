@@ -11,4 +11,6 @@ interface TransacaoRepository {
     fun inserir(transacao: Transacao): Boolean
 
     fun excluir(transacaoId: UUID):Boolean
+
+    fun atualizar(transacao: Transacao):Boolean
 }

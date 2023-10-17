@@ -2,6 +2,7 @@ package br.com.CarteiraDeInvestimentos.adapters.http
 
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoCreateComand
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoService
+import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoUpdateComand
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -32,5 +33,10 @@ class TransacaoHandler(
     fun excluir(transacaoId : String):ResponseEntity<String>{
         transacaoService.excluir(transacaoId = UUID.fromString(transacaoId))
         return ResponseEntity.noContent().build()
+    }
+
+    fun atualizar(transacaoUpdateComand: TransacaoUpdateComand, transacaoId: String):ResponseEntity<Transacao>{
+        val transacao = transacaoService.atualizar(transacaoUpdateComand, UUID.fromString(transacaoId))
+        return ResponseEntity.ok(transacao)
     }
 }

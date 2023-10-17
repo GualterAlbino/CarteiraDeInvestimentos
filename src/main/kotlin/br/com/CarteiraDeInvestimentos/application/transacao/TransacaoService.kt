@@ -33,4 +33,11 @@ class TransacaoService(
 
         transacaoRepository.excluir(transacaoId)
     }
+
+    fun atualizar(transacao: TransacaoUpdateComand, transacaoId: UUID):Transacao {
+        transacaoRepository.findById(transacaoId)?: throw  TransacaoNaoEncontradaException(transacaoId)
+        transacaoRepository.atualizar(transacao.toTransacao(transacaoId))
+
+        return findById(transacaoId = transacaoId)
+    }
 }

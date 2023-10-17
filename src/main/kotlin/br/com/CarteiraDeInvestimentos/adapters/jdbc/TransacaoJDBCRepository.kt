@@ -4,6 +4,7 @@ import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlD
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlInsertTransacao
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectAll
 import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectById
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlUpdateTransacao
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
 import br.com.CarteiraDeInvestimentos.domain.transacao.TransacaoRepository
 import mu.KotlinLogging
@@ -62,6 +63,29 @@ class TransacaoJDBCRepository(private val db: NamedParameterJdbcOperations ) : T
 
         }catch (ex: Exception){
             LOGGER.error { "Houve um erro ao inserir a transação: ${ex.message}" }
+            throw ex
+        }
+    }
+
+    override fun atualizar(transacao: Transacao):Boolean {
+        try {
+            val params = MapSqlParameterSource()
+            params.addValue("id", transacao.id)
+            params.addValue("ticket", transacao.ticket)
+            params.addValue("tipo", transacao.ticket)
+            params.addValue("usuario", transacao.usuario)
+            params.addValue("operacao", transacao.operacao)
+            params.addValue("descricao", transacao.descricao)
+            params.addValue("quantidade", transacao.quantidade)
+            params.addValue("valor_unitario", transacao.valorUnitario)
+            params.addValue("data_hora", transacao.dataHora)
+
+            val linhasAfestadas = db.update(sqlUpdateTransacao(), params)
+
+            return linhasAfestadas > 0
+
+        }catch (ex: Exception){
+            LOGGER.error { "Houve um erro ao atualizar a transação: ${ex.message}" }
             throw ex
         }
     }

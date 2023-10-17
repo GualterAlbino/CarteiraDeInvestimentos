@@ -38,5 +38,18 @@ object TransacaoSqlExpressions {
         DELETE FROM transacao WHERE id = :id
     """.trimIndent()
 
+    fun sqlUpdateTransacao() = """UPDATE transacao
+        SET
+        ticket = :ticket,
+        usuario = :usuario,
+        tipo = :tipo, 
+        operacao = :operacao, 
+        descricao = :descricao, 
+        quantidade = :quantidade, 
+        valor_unitario = :valor_unitario, 
+        valor_total = :valor_total, 
+        data_hora = :data_hora
+    """.trimIndent()
+
 }
 

@@ -13,5 +13,15 @@ object UsuarioSqlExpressions {
 
     """.trimIndent()
 
+    fun sqlDeleteUsuarioById() = """
+        DELETE FROM usuario WHERE id = :id
+    """.trimIndent()
+
+    fun sqlUpdateUsuario() = """UPDATE usuario
+        SET
+        nome = :nome,
+        senha = :senha
+    """.trimIndent()
+
 }
 

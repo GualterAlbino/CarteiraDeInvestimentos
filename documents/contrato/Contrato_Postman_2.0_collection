@@ -47,7 +47,22 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{localhost}}/transacao/232447b9-a951-4d74-b33d-f12983af565a"
+						"url": {
+							"raw": "{{localhost}}/transacao/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"transacao",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "28f37efb-44b0-4826-9d5a-d5d8f317c184"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -58,7 +73,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo PAULO\",\r\n    \"quantidade\": 10,\r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100.00,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
+							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"7d9cd1ad-3f8e-4256-86d0-2bca91196433\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,7 +91,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"descricao\": \"Recomendada por Paulo Ricardo Noé\"\r\n}",
+							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"7d9cd1ad-3f8e-4256-86d0-2bca91196433\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100.00,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,7 +110,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "50f0122e-ca5f-496b-a88c-4167e5ca49fa"
 								}
 							]
 						}
@@ -119,7 +134,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "28f37efb-44b0-4826-9d5a-d5d8f317c184"
 								}
 							]
 						}
@@ -157,7 +172,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "422c713a-084d-4595-86fc-5d0efd7600a8"
 								}
 							]
 						}
@@ -171,7 +186,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Paulo\",\r\n    \"senha\": \"noé\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Gualter Albino\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -189,14 +204,29 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Paulo Ricardo Noé\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Paulo Ricardo Noé\",\r\n    \"senha\": \"bcvbcvbcvb1c15651bccvb\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{localhost}}/usuario"
+						"url": {
+							"raw": "{{localhost}}/usuario/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "422c713a-084d-4595-86fc-5d0efd7600a8"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -217,7 +247,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "7d9cd1ad-3f8e-4256-86d0-2bca91196433"
+									"value": "422c713a-084d-4595-86fc-5d0efd7600a8"
 								}
 							]
 						}

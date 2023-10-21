@@ -2,13 +2,10 @@ package br.com.CarteiraDeInvestimentos.adapters.http
 
 
 import br.com.CarteiraDeInvestimentos.application.usuario.UsuarioCreateComand
+import br.com.CarteiraDeInvestimentos.application.usuario.UsuarioUpdateComand
 import br.com.CarteiraDeInvestimentos.domain.usuario.Usuario
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 private const val UUID_REGEX = "[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}"
 
@@ -31,6 +28,15 @@ class UsuarioController(
         return usuarioHandler.inserir(usuario)
     }
 
+    @DeleteMapping("/usuario/{usuarioId}")
+    fun excluir(@PathVariable usuarioId: String):ResponseEntity<String>{
+        return usuarioHandler.excluir(usuarioId)
+    }
+
+    @PatchMapping("/usuario/{usuarioId}")
+    fun atualizar(@RequestBody transacao: UsuarioUpdateComand, @PathVariable usuarioId: String):ResponseEntity<Usuario>{
+        return usuarioHandler.atualizar(transacao, usuarioId)
+    }
 
 
 

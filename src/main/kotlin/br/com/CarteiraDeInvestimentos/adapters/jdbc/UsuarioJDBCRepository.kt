@@ -59,6 +59,37 @@ class UsuarioJDBCRepository(private val db: NamedParameterJdbcOperations ) : Usu
         }
     }
 
+    override fun atualizar(usuario: Usuario):Boolean {
+        try {
+            val params = MapSqlParameterSource()
+            params.addValue("id", usuario.id)
+            params.addValue("nome", usuario.nome)
+            params.addValue("senha", usuario.senha)
+
+            val linhasAfestadas = db.update(UsuarioSqlExpressions.sqlUpdateUsuario(), params)
+
+            return linhasAfestadas > 0
+
+        }catch (ex: Exception){
+            LOGGER.error { "Houve um erro ao atualizar a transação: ${ex.message}" }
+            throw ex
+        }
+    }
+
+    override fun excluir(usuarioId: UUID): Boolean {
+        try {
+
+            val params = MapSqlParameterSource("id", usuarioId)
+            val linhasExcluidas = db.update(UsuarioSqlExpressions.sqlDeleteUsuarioById(), params)
+
+            return linhasExcluidas == 1
+
+        }catch (ex: Exception){
+            LOGGER.error { "Houve um erro ao excluir a transação: ${ex.message}" }
+            throw ex
+        }
+    }
+
 
     private fun rowMapper()= org.springframework.jdbc.core.RowMapper<Usuario> { rs, _ ->
         val usuarioId = UUID.fromString(rs.getString("id"))

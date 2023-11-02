@@ -1,10 +1,11 @@
-package br.com.CarteiraDeInvestimentos.adapters.jdbc
+package br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario
 
 
 import UsuarioRepository
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.UsuarioSqlExpressions.sqlInsertUsuario
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.UsuarioSqlExpressions.sqlSelectAllUsuario
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.UsuarioSqlExpressions.sqlSelectByIdUsuario
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario.UsuarioSqlExpressions.sqlInsertUsuario
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario.UsuarioSqlExpressions.sqlSelectAllUsuario
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario.UsuarioSqlExpressions.sqlSelectByIdUsuario
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario.UsuarioSqlExpressions.sqlSelectUsuarioByEmail
 import br.com.CarteiraDeInvestimentos.domain.usuario.Usuario
 
 import mu.KotlinLogging
@@ -41,12 +42,24 @@ class UsuarioJDBCRepository(private val db: NamedParameterJdbcOperations ) : Usu
 
     }
 
+    override fun findByEmail(email: String): Usuario? {
+        val usuario = try {
+            val params = MapSqlParameterSource("email", email)
+            db.query(sqlSelectUsuarioByEmail(), params, rowMapper()).firstOrNull()
+        } catch (ex: Exception) {
+            LOGGER.error { "Houve um erro ao consultar o usuario: ${ex.message}" }
+            throw ex
+        }
+        return usuario
+    }
+
 
     override fun inserir(usuario: Usuario): Boolean {
         try {
             val params = MapSqlParameterSource()
             params.addValue("id", usuario.id)
             params.addValue("nome", usuario.nome)
+            params.addValue("email", usuario.email)
             params.addValue("senha", usuario.senha)
 
             val linhasAfetadas = db.update(sqlInsertUsuario(),params)
@@ -64,6 +77,7 @@ class UsuarioJDBCRepository(private val db: NamedParameterJdbcOperations ) : Usu
             val params = MapSqlParameterSource()
             params.addValue("id", usuario.id)
             params.addValue("nome", usuario.nome)
+            params.addValue("email", usuario.email)
             params.addValue("senha", usuario.senha)
 
             val linhasAfestadas = db.update(UsuarioSqlExpressions.sqlUpdateUsuario(), params)
@@ -96,6 +110,7 @@ class UsuarioJDBCRepository(private val db: NamedParameterJdbcOperations ) : Usu
         Usuario(
                 id = usuarioId,
                 nome = rs.getString("nome"),
+                email = rs.getString("email"),
                 senha = rs.getString("senha")
 
 

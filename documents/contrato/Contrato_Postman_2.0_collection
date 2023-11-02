@@ -12,8 +12,24 @@
 				{
 					"name": "Obter Todas Transações",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer ...",
+								"type": "text"
+							}
+						],
 						"url": "{{localhost}}/transacao"
 					},
 					"response": []
@@ -22,7 +38,19 @@
 					"name": "Obter Transações por Ticket",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer ...",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/transacao/:ticket",
 							"host": [
@@ -46,7 +74,19 @@
 					"name": "Obter Transação Por ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/transacao/:id",
 							"host": [
@@ -70,10 +110,22 @@
 					"name": "Cadastrar Transação",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"7d9cd1ad-3f8e-4256-86d0-2bca91196433\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
+							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"e00274ae-23d0-4f04-9a2c-d109dde80c18\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,8 +139,19 @@
 				{
 					"name": "Editar Transação",
 					"request": {
-						"method": "PATCH",
-						"header": [],
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"7d9cd1ad-3f8e-4256-86d0-2bca91196433\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100.00,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n}",
@@ -121,7 +184,19 @@
 					"name": "Deletar Transação",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/transacao/:id",
 							"host": [
@@ -150,8 +225,35 @@
 					"name": "Obter Dados do Usuario",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": "{{localhost}}/usuario"
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/usuario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -159,7 +261,18 @@
 					"name": "Deletar Usuario",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/usuario/:id",
 							"host": [
@@ -183,10 +296,21 @@
 					"name": "Criar Usuario",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Gualter Albino\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Gualter Albino\",\r\n    \"email\": \"gualter@email.com\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -201,7 +325,18 @@
 					"name": "Editar Usuario",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"nome\": \"Paulo Ricardo Noé\",\r\n    \"senha\": \"bcvbcvbcvb1c15651bccvb\"\r\n}",
@@ -234,7 +369,18 @@
 					"name": "Buscar Usuario por ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/usuario/:id",
 							"host": [
@@ -263,7 +409,18 @@
 					"name": "Obter Carteira",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/carteira/:idUsuario",
 							"host": [
@@ -280,6 +437,40 @@
 								}
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"gualter@email.com\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/login"
 					},
 					"response": []
 				}

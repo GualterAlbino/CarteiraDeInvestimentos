@@ -7,13 +7,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UsuarioCreateComand(
         val nome :String,
+        val email :String,
         val senha:String
-
-
 )
 
-fun UsuarioCreateComand.toUsuario() = Usuario (
+fun UsuarioCreateComand.toUsuario(encoderPassword: EncoderPassword) = Usuario(
         nome = nome,
-        senha = senha
-
+        email = email,
+        senha = encoderPassword.encode(senha),
 )

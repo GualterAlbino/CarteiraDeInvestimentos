@@ -8,11 +8,13 @@ import java.util.*
 @Serializable
 data class UsuarioUpdateComand(
         val nome :String,
+        val email:String,
         val senha:String
 )
 
-fun UsuarioUpdateComand.toUsuario(id: UUID) = Usuario (
-        id = id,
+fun UsuarioUpdateComand.toUsuario(usuarioId: UUID, encoderPassword: EncoderPassword) = Usuario(
+        id = usuarioId,
         nome = nome,
-        senha = senha
+        email = email,
+        senha = encoderPassword.encode(senha),
 )

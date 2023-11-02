@@ -1,4 +1,4 @@
-package br.com.CarteiraDeInvestimentos.adapters.jdbc
+package br.com.CarteiraDeInvestimentos.adapters.jdbc.usuario
 
 object UsuarioSqlExpressions {
     fun sqlSelectAllUsuario() = "SELECT * FROM usuario".trimIndent()
@@ -8,8 +8,8 @@ object UsuarioSqlExpressions {
 
 
     fun sqlInsertUsuario() = """
-      INSERT INTO usuario (id, nome, senha)
-      VALUES (:id, :nome, :senha);
+      INSERT INTO usuario (id, nome, email, senha)
+      VALUES (:id, :nome, :email, :senha);
 
     """.trimIndent()
 
@@ -17,9 +17,21 @@ object UsuarioSqlExpressions {
         DELETE FROM usuario WHERE id = :id
     """.trimIndent()
 
+    fun sqlSelectUsuarioByEmail() = """
+        select 
+            id,
+            nome,
+            email,
+            senha
+        from usuario
+        WHERE email = :email
+    """.trimIndent()
+
+
     fun sqlUpdateUsuario() = """UPDATE usuario
         SET
         nome = :nome,
+        email = :email,
         senha = :senha
     """.trimIndent()
 

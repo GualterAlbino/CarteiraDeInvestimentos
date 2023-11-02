@@ -1,20 +1,17 @@
-package br.com.CarteiraDeInvestimentos.adapters.jdbc
+package br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao
 
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlDeleteById
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlInsertTransacao
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectAll
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlSelectById
-import br.com.CarteiraDeInvestimentos.adapters.jdbc.TransacaoSqlExpressions.sqlUpdateTransacao
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao.TransacaoSqlExpressions.sqlDeleteById
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao.TransacaoSqlExpressions.sqlInsertTransacao
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao.TransacaoSqlExpressions.sqlSelectAll
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao.TransacaoSqlExpressions.sqlSelectById
+import br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao.TransacaoSqlExpressions.sqlUpdateTransacao
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
 import br.com.CarteiraDeInvestimentos.domain.transacao.TransacaoRepository
 import mu.KotlinLogging
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations
 import org.springframework.stereotype.Repository
-import org.springframework.transaction.annotation.Transactional
 import java.util.*
-import java.util.logging.Logger
-import javax.swing.tree.RowMapper
 
 @Repository
 class TransacaoJDBCRepository(private val db: NamedParameterJdbcOperations ) : TransacaoRepository{

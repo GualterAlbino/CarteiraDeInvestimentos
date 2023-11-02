@@ -1,4 +1,4 @@
-package br.com.CarteiraDeInvestimentos.adapters.jdbc
+package br.com.CarteiraDeInvestimentos.adapters.jdbc.transacao
 
 object TransacaoSqlExpressions {
     fun sqlSelectAll() = "SELECT * FROM transacao".trimIndent()

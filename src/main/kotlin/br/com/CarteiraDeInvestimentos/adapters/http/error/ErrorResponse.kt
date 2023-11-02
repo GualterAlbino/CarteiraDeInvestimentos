@@ -1,8 +1,10 @@
 package br.com.CarteiraDeInvestimentos.adapters.http.error
 
-import java.util.*
+import kotlinx.serialization.Serializable
+import java.util.UUID
 
-class ErrorResponse (
-        val id: UUID? = null,
+@Serializable
+data class ErrorResponse(
+        @Serializable(with = UUIDSerializer::class) val id: UUID? = null,
         val message: String,
 )

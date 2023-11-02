@@ -1,7 +1,10 @@
-package br.com.CarteiraDeInvestimentos.adapters.http.error
+package br.com.catalogoprodutos.adapter.error
 
+import br.com.CarteiraDeInvestimentos.adapters.http.transacao.error.TransacaoErrorResponse
+import br.com.CarteiraDeInvestimentos.application.transacao.exceptions.TransacaoNaoEncontradaException
 import br.com.CarteiraDeInvestimentos.application.usuario.exceptions.UsuarioNaoEncontradoException
 import mu.KotlinLogging
+
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -13,16 +16,21 @@ private val LOGGER = KotlinLogging.logger { }
 @ControllerAdvice
 class ErrorHandler() {
     @ExceptionHandler(Exception::class)
-    fun handlerException(ex: Exception): ResponseEntity<ErrorResponse> {
+    fun handlerException(ex: Exception): ResponseEntity<TransacaoErrorResponse> {
         return ex.toServerResponse()
     }
 }
 
-fun Throwable.toResponse(): Pair<HttpStatus, ErrorResponse> =
+private fun Throwable.toResponse(): Pair<HttpStatus, TransacaoErrorResponse> =
         when (this) {
+            is TransacaoNaoEncontradaException -> toResponse(
+                    id = this.transacaoId,
+                    statusCode = HttpStatus.NOT_FOUND,
+            )
+
             is UsuarioNaoEncontradoException -> toResponse(
                     id = this.usuarioId,
-                    statusCode = HttpStatus.NOT_FOUND,
+                    statusCode = HttpStatus.NOT_FOUND
             )
 
             else -> {
@@ -32,12 +40,12 @@ fun Throwable.toResponse(): Pair<HttpStatus, ErrorResponse> =
             }
         }
 
-fun Throwable.toResponse(
+private fun Throwable.toResponse(
         id: UUID? = null,
         statusCode: HttpStatus,
         message: String = this.message ?: "",
-): Pair<HttpStatus, ErrorResponse> {
-    val response = ErrorResponse(
+): Pair<HttpStatus, TransacaoErrorResponse> {
+    val response = TransacaoErrorResponse(
             id = id,
             message = message,
     )
@@ -52,7 +60,7 @@ fun Throwable.toResponse(
     return statusCode to response
 }
 
-fun Throwable.toServerResponse(): ResponseEntity<ErrorResponse> {
+fun Throwable.toServerResponse(): ResponseEntity<TransacaoErrorResponse> {
     val (statusCode, response) = toResponse()
     return ResponseEntity.status(statusCode).body(response)
 }

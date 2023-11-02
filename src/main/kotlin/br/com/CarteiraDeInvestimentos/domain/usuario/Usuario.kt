@@ -5,6 +5,7 @@ import java.util.UUID
 class Usuario (
         val id: UUID = UUID.randomUUID(),
         val nome : String,
+        val email: String,
         val senha: String
 
 )

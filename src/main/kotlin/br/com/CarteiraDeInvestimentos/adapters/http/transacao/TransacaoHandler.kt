@@ -1,4 +1,4 @@
-package br.com.CarteiraDeInvestimentos.adapters.http
+package br.com.CarteiraDeInvestimentos.adapters.http.transacao
 
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoCreateComand
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoService

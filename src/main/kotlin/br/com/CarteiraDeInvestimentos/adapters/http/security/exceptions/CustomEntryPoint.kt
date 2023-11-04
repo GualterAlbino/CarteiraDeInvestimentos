@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.security.core.AuthenticationException
 import org.springframework.security.web.AuthenticationEntryPoint
 import org.springframework.stereotype.Component
+import java.io.PrintWriter
 
 @Component("customAuthenticationEntryPoint")
 class CustomEntryPoint() : AuthenticationEntryPoint {
@@ -20,7 +21,12 @@ class CustomEntryPoint() : AuthenticationEntryPoint {
         val format = Json { ignoreUnknownKeys = true }
         response.status = HttpStatus.UNAUTHORIZED.value()
         response.addHeader("Content-Type", "application/json")
-
-        response.writer.write(format.encodeToString(ErrorResponse(message = "Falha na autenticação!")))
+        //response.writer.println("Falha!")
+        //response.writer.write(format.encodeToString(ErrorResponse(message = "Authentication failed")))
+        response.writer.write(ErrorResponse(message = "iyuiyui"))
     }
+}
+
+private fun PrintWriter.write(errorResponse: ErrorResponse) {
+    TODO("Not yet implemented")
 }

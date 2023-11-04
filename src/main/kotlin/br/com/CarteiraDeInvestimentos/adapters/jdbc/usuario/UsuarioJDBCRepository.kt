@@ -56,6 +56,7 @@ class UsuarioJDBCRepository(private val db: NamedParameterJdbcOperations ) : Usu
 
     override fun inserir(usuario: Usuario): Boolean {
         try {
+
             val params = MapSqlParameterSource()
             params.addValue("id", usuario.id)
             params.addValue("nome", usuario.nome)

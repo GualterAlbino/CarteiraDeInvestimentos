@@ -1,7 +1,6 @@
 package br.com.CarteiraDeInvestimentos
 
-import io.jsonwebtoken.Jwts
-import io.jsonwebtoken.io.Encoders
+
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

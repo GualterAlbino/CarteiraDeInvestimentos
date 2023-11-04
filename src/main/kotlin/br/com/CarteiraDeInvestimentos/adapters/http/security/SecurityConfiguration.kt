@@ -23,7 +23,7 @@ class SecurityConfiguration(
                     it.requestMatchers(HttpMethod.OPTIONS).permitAll()
                     it.requestMatchers("/login/**").permitAll()
                     it.requestMatchers("/usuario/**").permitAll()
-                   // it.anyRequest().authenticated()
+                    it.anyRequest().authenticated()
                 }
                 .csrf {
                     it.disable()

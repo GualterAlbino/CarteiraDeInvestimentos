@@ -23,7 +23,7 @@ USING id::UUID;
 CREATE TABLE IF NOT EXISTS carteira.Transacao (
   id VARCHAR(45) PRIMARY KEY,
   ticket VARCHAR(45) NOT NULL,
-  usuario UUID NULL,
+  usuario VARCHAR(45) NOT NULL,
   tipo VARCHAR(45) NOT NULL,
   operacao VARCHAR(45) NOT NULL,
   descricao VARCHAR(45) NOT NULL,
@@ -31,10 +31,10 @@ CREATE TABLE IF NOT EXISTS carteira.Transacao (
   valor_unitario DOUBLE PRECISION NOT NULL,
   valor_total DOUBLE PRECISION NOT NULL,
   data_hora VARCHAR(45) NOT NULL,
-  
+
   CONSTRAINT fk_Transacao_Usuario
     FOREIGN KEY (usuario)
-    REFERENCES carteira.Usuario (id)
+    REFERENCES carteira.Usuario (email)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
@@ -47,7 +47,7 @@ USING id::UUID;
 
 -- Cria a tabela Carteira
 CREATE TABLE IF NOT EXISTS carteira.Carteira (
-  usuario UUID NOT NULL,
+  usuario VARCHAR(45) NOT NULL,
   ticket VARCHAR(45) NOT NULL,
   quantidade INT NOT NULL,
   valorUnitario DOUBLE PRECISION NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS carteira.Carteira (
   PRIMARY KEY (usuario),
   CONSTRAINT fk_Carteira_Usuario
     FOREIGN KEY (usuario)
-    REFERENCES carteira.Usuario (id)
+    REFERENCES carteira.Usuario (email)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );

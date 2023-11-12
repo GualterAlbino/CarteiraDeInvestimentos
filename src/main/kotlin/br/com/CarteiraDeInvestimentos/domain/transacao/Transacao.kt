@@ -5,7 +5,7 @@ import java.util.UUID
 class Transacao (
         val id: UUID = UUID.randomUUID(),
         val ticket : String,
-        val usuario: UUID,
+        val usuario: String,
         val tipo: String,  //TransacaoTipo -  Ação, FII, BDR e etc
         val operacao: String, //TransacaoOperacao -  Compra, venda e etc
         val descricao: String,

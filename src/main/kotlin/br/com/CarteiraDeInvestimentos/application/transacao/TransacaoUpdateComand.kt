@@ -8,7 +8,7 @@ import java.util.*
 @Serializable
 data class TransacaoUpdateComand(
         val ticket :String,
-        val usuario: UUID,
+        val usuario: String,
         val tipo: String,
         val operacao: String,
         val descricao: String,

@@ -440,6 +440,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Info do Ticket - API externa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://brapi.dev/api/quote/PETR4?token=qKyvtAun1bHaLUheg9cdxU",
+							"protocol": "https",
+							"host": [
+								"brapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"quote",
+								"PETR4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "qKyvtAun1bHaLUheg9cdxU"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

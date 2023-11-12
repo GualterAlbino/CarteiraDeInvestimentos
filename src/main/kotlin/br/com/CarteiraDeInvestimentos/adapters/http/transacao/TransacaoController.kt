@@ -25,17 +25,12 @@ class TransacaoController(
 
     @PostMapping("/transacao")
     fun inserir(@RequestBody transacao: TransacaoCreateComand): ResponseEntity<Transacao> {
-        val authentication = SecurityContextHolder.getContext().authentication
-        println(SecurityContextHolder.getContext().authentication.principal)
-
-        var pacienciaAcabando = SecurityContextHolder.getContext().authentication.principal
 
 
-        if (authentication != null && authentication.principal is UserDetails) {
-            val userDetails = authentication.principal as UserDetails
+        val emailUsuario = SecurityContextHolder.getContext().authentication.principal
 
-
-
+        if(emailUsuario != null){
+            transacao.usuario  = SecurityContextHolder.getContext().authentication.principal.toString()
         }
 
 

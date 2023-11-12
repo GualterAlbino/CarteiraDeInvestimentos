@@ -25,7 +25,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NDA1MH0.7qglN-HbV84JXjUscZYpy21RlraHcnKy55c0V9gH5ZAxPY8KPq_whPtKIB6Ra0BbEWRBet27Jd09trIIhzOHqw",
 								"description": "Bearer ...",
 								"type": "text"
 							}
@@ -121,7 +121,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NTEzNX0.mpnKbKDGBPMtGq8GiaGlGcBldr2kaBpx0WArITmvIcKdanc4jaPIS42KLqt4D7K-8Z4XkjyJ7cu_BRrHxPX2Yw",
 								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
 								"type": "text"
 							},
@@ -133,7 +133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"e00274ae-23d0-4f04-9a2c-d109dde80c18\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
+							"raw": "{\r\n   \"ticket\": \"XFR11\",\r\n   \"tipo\": \"FII\",\r\n   \"usuario\": \"4feef647-8fbc-42d5-9245-36d35cb13086\",\r\n   \"operacao\":\"Compra\",\r\n    \"descricao\":\"Indicado pelo Stempliuc\",\r\n    \"quantidade\": 10, \r\n    \"valor_unitario\": 10.00,\r\n    \"valor_total\": 100,\r\n    \"data_hora\": \"10/02/2023 19:54:06\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -249,7 +249,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NDA1MH0.7qglN-HbV84JXjUscZYpy21RlraHcnKy55c0V9gH5ZAxPY8KPq_whPtKIB6Ra0BbEWRBet27Jd09trIIhzOHqw",
 								"description": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
 								"type": "text"
 							}
@@ -285,7 +285,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NDA1MH0.7qglN-HbV84JXjUscZYpy21RlraHcnKy55c0V9gH5ZAxPY8KPq_whPtKIB6Ra0BbEWRBet27Jd09trIIhzOHqw",
 								"type": "text"
 							}
 						],
@@ -321,12 +321,13 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Gualter Albino\",\r\n    \"email\": \"gualter@email.com\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Paulo Noé\",\r\n    \"email\": \"paulo@email.com\",\r\n    \"senha\": \"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -401,7 +402,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NDA1MH0.7qglN-HbV84JXjUscZYpy21RlraHcnKy55c0V9gH5ZAxPY8KPq_whPtKIB6Ra0BbEWRBet27Jd09trIIhzOHqw",
 								"type": "text"
 							}
 						],
@@ -441,7 +442,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiI0ZmVlZjY0Ny04ZmJjLTQyZDUtOTI0NS0zNmQzNWNiMTMwODYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTE5NDA1MH0.7qglN-HbV84JXjUscZYpy21RlraHcnKy55c0V9gH5ZAxPY8KPq_whPtKIB6Ra0BbEWRBet27Jd09trIIhzOHqw",
 								"type": "text"
 							}
 						],
@@ -457,7 +458,34 @@
 							"variable": [
 								{
 									"key": "idUsuario",
-									"value": ""
+									"value": "4feef647-8fbc-42d5-9245-36d35cb13086"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info do Ticket - API externa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://brapi.dev/api/quote/PETR4?token=qKyvtAun1bHaLUheg9cdxU",
+							"protocol": "https",
+							"host": [
+								"brapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"quote",
+								"PETR4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "qKyvtAun1bHaLUheg9cdxU"
 								}
 							]
 						}
@@ -478,16 +506,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjYTMwOTRjMS1jNjA4LTQ1YzYtOGFkMS0wMTg5MjViYzNiMjYiLCJzdWIiOiJndWFsdGVyQGVtYWlsLmNvbSIsImV4cCI6MTY5OTA1MDc4M30.UWHPm3wxNe-k-EH3j8btHehstfrOeWCbOOh2kYvVsL5EZ2PBPC17VX2KwQ2jHOVSR-1nWyscaS5Asg9IVLEijA",
-								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"gualter@email.com\",\r\n    \"senha\": \"Stempliuc\"\r\n}",
+							"raw": "{\r\n    \"email\": \"gualter@email.com\",\r\n    \"senha\": \"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

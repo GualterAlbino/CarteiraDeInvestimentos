@@ -1,4 +1,8 @@
-package br.com.CarteiraDeInvestimentos.adapters.http.usuario.error
+package br.com.CarteiraDeInvestimentos.adapters.http.transacao.error
 
-class UsuarioErrorResponse {
-}
+import java.util.*
+
+class UsuarioErrorResponse (
+        val id: UUID? = null,
+        val message: String,
+)

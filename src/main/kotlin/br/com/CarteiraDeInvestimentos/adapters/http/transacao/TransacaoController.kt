@@ -1,8 +1,11 @@
 package br.com.CarteiraDeInvestimentos.adapters.http.transacao
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserDetails
 
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoCreateComand
 import br.com.CarteiraDeInvestimentos.application.transacao.TransacaoUpdateComand
 import br.com.CarteiraDeInvestimentos.domain.transacao.Transacao
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -22,8 +25,18 @@ class TransacaoController(
 
     @PostMapping("/transacao")
     fun inserir(@RequestBody transacao: TransacaoCreateComand): ResponseEntity<Transacao> {
+
+
+        val emailUsuario = SecurityContextHolder.getContext().authentication.principal
+
+        if(emailUsuario != null){
+            transacao.usuario  = SecurityContextHolder.getContext().authentication.principal.toString()
+        }
+
+
         return transacaoHandler.inserir(transacao)
     }
+
 
     @DeleteMapping("/transacao/{transacaoId}")
     fun excluir(@PathVariable transacaoId: String): ResponseEntity<String> {
